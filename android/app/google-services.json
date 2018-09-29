@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "342922254463",
+    "firebase_url": "https://tour-talk-share.firebaseio.com",
+    "project_id": "tour-talk-share",
+    "storage_bucket": "tour-talk-share.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342922254463:android:4cf7c5d6998b4119",
+        "android_client_info": {
+          "package_name": "org.honailabs.ttshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342922254463-7d9h1utp3tsqudj1q5dgq0fuknu72pfe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.honailabs.ttshare",
+            "certificate_hash": "882470ac3df8a2b66efd056d5c48b550f90d582a"
+          }
+        },
+        {
+          "client_id": "342922254463-fjruicppkbbqj4od1ql9ef17s2pmk8b1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiFK_6zn_NXz9N81RCM6_D9sz2oMdHeo8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342922254463-fjruicppkbbqj4od1ql9ef17s2pmk8b1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
