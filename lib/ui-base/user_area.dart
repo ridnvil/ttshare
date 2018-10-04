@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ttshare/ui-base/pages/explore.dart';
 import 'package:ttshare/ui-base/pages/feeds.dart';
@@ -5,6 +6,10 @@ import 'package:ttshare/ui-base/pages/plans.dart';
 import 'package:ttshare/ui-base/tourist_chat.dart';
 
 class UserArea extends StatefulWidget {
+  final FirebaseUser user;
+
+  const UserArea({Key key, @required this.user}) : super(key: key);
+
   @override
   _UserAreaState createState() => _UserAreaState();
 }
@@ -45,6 +50,23 @@ class _UserAreaState extends State<UserArea> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: .0,
+        leading: Container(
+          padding: EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+//              Navigator.push(
+//                  context, MaterialPageRoute(builder: (context) => Profile()));
+              /*Authentication auth = new Authentication();
+              auth.signOut().whenComplete(() {
+                Navigator.pushReplacementNamed(context, '/login');
+              });*/
+            },
+            child: CircleAvatar(
+              backgroundColor: Colors.grey[400],
+              backgroundImage: NetworkImage(widget.user.photoUrl),
+            ),
+          ),
+        ),
         title: Text(
           title,
           style: TextStyle(
@@ -57,8 +79,11 @@ class _UserAreaState extends State<UserArea> {
           IconButton(
             icon: Icon(Icons.chat_bubble_outline),
             color: Colors.grey[600],
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => TouristChat())),
+            onPressed: () =>
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TouristChat(user: widget.user))),
           ),
         ],
       ),

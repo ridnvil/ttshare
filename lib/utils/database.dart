@@ -40,4 +40,23 @@ class Database {
       "created_at": DateTime.now(),
     });
   }
+
+  static Future<DocumentReference> addNewMessage(FirebaseUser user,
+      String message, String type) async {
+    return await _firestore.collection('messages').add({
+      "uid": user.uid,
+      "message": message,
+      "name": user.displayName,
+      "photo_url": user.photoUrl,
+      "created_at": DateTime.now(),
+      "type": type
+    });
+  }
+
+  static Stream<QuerySnapshot> getListMessages() {
+    return _firestore
+        .collection('messages')
+        .orderBy('created_at', descending: true)
+        .snapshots();
+  }
 }

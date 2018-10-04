@@ -21,4 +21,13 @@ class Authentication {
   Future<bool> isSignedIn() async {
     return await _googleSignIn.isSignedIn();
   }
+
+  Future<FirebaseUser> getCurrentUser() async {
+    return await _auth.currentUser();
+  }
+
+  Future signOut() async {
+    await _googleSignIn.signOut();
+    await _auth.signOut();
+  }
 }

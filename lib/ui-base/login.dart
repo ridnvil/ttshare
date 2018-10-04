@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttshare/ui-base/user_area.dart';
 import 'package:ttshare/utils/authentication.dart';
 import 'package:ttshare/utils/database.dart';
 
@@ -69,8 +70,13 @@ class _LoginState extends State<Login> {
                         if (!userData.exists) {
                           await Database.addNewUser(user);
                         }
-                      }).whenComplete(() {
-                        Navigator.pushReplacementNamed(context, '/user_area');
+                        await Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    UserArea(
+                                      user: user,
+                                    )));
                       });
                     }),
               ),
