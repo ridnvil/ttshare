@@ -73,8 +73,7 @@ class _LoginState extends State<Login> {
                         await Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    UserArea(
+                                builder: (context) => UserArea(
                                       user: user,
                                     )));
                       });
