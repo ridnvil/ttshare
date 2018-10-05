@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ttshare/ui-base/pages/explore.dart';
-import 'package:ttshare/ui-base/pages/feeds.dart';
-import 'package:ttshare/ui-base/pages/plans.dart';
+import 'package:ttshare/ui-base/explore.dart';
+import 'package:ttshare/ui-base/feeds.dart';
+import 'package:ttshare/ui-base/plans.dart';
+import 'package:ttshare/ui-base/profile.dart';
 import 'package:ttshare/ui-base/tourist_chat.dart';
 
 class UserArea extends StatefulWidget {
@@ -54,12 +55,12 @@ class _UserAreaState extends State<UserArea> {
           padding: EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
-//              Navigator.push(
-//                  context, MaterialPageRoute(builder: (context) => Profile()));
-              /*Authentication auth = new Authentication();
-              auth.signOut().whenComplete(() {
-                Navigator.pushReplacementNamed(context, '/login');
-              });*/
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        Profile(uid: widget.user.uid, isMe: true)),
+              );
             },
             child: CircleAvatar(
               backgroundColor: Colors.grey[400],

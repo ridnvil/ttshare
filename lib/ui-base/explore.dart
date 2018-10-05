@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:location/location.dart';
 import 'package:ttshare/ui-base/components/explore_card.dart';
+import 'package:ttshare/ui-base/tourist_attaraction_details.dart';
 import 'package:ttshare/utils/database.dart';
 
 class Explore extends StatefulWidget {
@@ -90,6 +91,16 @@ class _ExploreState extends State<Explore> {
                   'https://sl.d.umn.edu/och/PhotoGallery/no-image-available.jpg',
               cityName: doc['location']['city'] ?? 'No City Name',
               category: doc['tag'] ?? 'No Category',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          TouristAttractionDetails(
+                            documentSnapshot: doc,
+                          )),
+                );
+              },
             );
             /*return ListTile(
               title: Text(doc['name'] ?? '<No message retrieved>'),

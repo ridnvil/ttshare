@@ -25,6 +25,7 @@ dependencies:
   geocoder: ^0.1.1
   google_sign_in: ^3.0.5
   cached_network_image: ^0.4.1
+  carousel_pro: ^0.0.13
 
   great_circle_distance: ^1.0.1
   haversine: ^1.0.2
